@@ -1,5 +1,6 @@
 package org.hzero.hatc.app.service.impl;
 
+
 import io.choerodon.core.exception.CommonException;
 import org.hzero.hatc.app.service.TaskDetailService;
 import org.hzero.hatc.domain.entity.TaskDetail;
@@ -29,6 +30,10 @@ public class TaskDetailServiceImpl implements TaskDetailService {
         this.taskDetailRepository = taskDetailRepository;
         this.taskRepositiory = taskRepositiory;
     }
+  
+    @Override
+    public void deleteByTaskId(Long taskId) {
+        taskDetailRepository.deleteByTaskId(taskId);
 
     @Override
     public TaskDetail create(TaskDetail taskDetail) {
@@ -63,5 +68,6 @@ public class TaskDetailServiceImpl implements TaskDetailService {
     @Override
     public TaskDetail update(TaskDetail taskDetail) {
         return taskDetailRepository.update(taskDetail);
+
     }
 }

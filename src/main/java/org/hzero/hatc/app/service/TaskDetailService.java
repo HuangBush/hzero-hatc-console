@@ -14,6 +14,12 @@ import java.util.List;
 public interface TaskDetailService {
 
     /**
+     * 根据TaskDetail的id删除对象信息
+     * @param taskId
+     */
+    void deleteByTaskId(Long taskId);
+
+    /**
      * 增加任务详细
      * @param taskDetail
      * @return
@@ -46,4 +52,5 @@ public interface TaskDetailService {
      * @return
      */
     TaskDetail update(TaskDetail taskDetail);
+
 }

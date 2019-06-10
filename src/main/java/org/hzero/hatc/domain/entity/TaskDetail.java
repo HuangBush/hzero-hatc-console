@@ -8,13 +8,21 @@ import io.choerodon.mybatis.domain.AuditDomain;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+
 import java.math.BigDecimal;
 import java.util.Date;
+
 
 @ModifyAudit
 @VersionAudit
 @Table(name = "hcsl_task_detail")
 @JsonInclude(JsonInclude.Include.NON_NULL)
+
+/**
+ * 任务明细表对象
+ * @author jiayanyan 2019/06/09
+ */
 public class TaskDetail extends AuditDomain {
     @Id
     @GeneratedValue
@@ -155,6 +163,7 @@ public class TaskDetail extends AuditDomain {
 
     public void setAttachmentUuid(String attachmentUuid) {
         this.attachmentUuid = attachmentUuid == null ? null : attachmentUuid.trim();
+
     }
 
     public Long getProcessDuration() {
@@ -165,11 +174,14 @@ public class TaskDetail extends AuditDomain {
         this.processDuration = processDuration;
     }
 
+
+
     public BigDecimal getAmount() {
         return amount;
     }
 
     public void setAmount(BigDecimal amount) {
+
         this.amount = amount;
     }
 
@@ -179,6 +191,7 @@ public class TaskDetail extends AuditDomain {
 
     public void setProcessStatus(String processStatus) {
         this.processStatus = processStatus == null ? null : processStatus.trim();
+
     }
 
     public String getProcessType() {
@@ -423,3 +436,4 @@ public class TaskDetail extends AuditDomain {
                 '}';
     }
 }
+

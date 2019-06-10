@@ -1,5 +1,6 @@
 package org.hzero.hatc.domain.repository;
 
+
 import org.hzero.hatc.domain.entity.TaskDetail;
 
 import java.util.List;
@@ -12,6 +13,12 @@ import java.util.List;
  * @date 2019/6/7
  */
 public interface TaskDetailRepository {
+
+    /**
+     * 根据TaskDetail的id删除对象信息
+     * @param taskId
+     */
+    void deleteByTaskId(Long taskId);
 
     /**
      * 增加任务详细
@@ -45,4 +52,5 @@ public interface TaskDetailRepository {
      * @param taskDetail
      */
     TaskDetail update(TaskDetail taskDetail);
+
 }

@@ -14,6 +14,10 @@ import java.util.Date;
 @VersionAudit
 @Table(name = "hcsl_task")
 @JsonInclude(JsonInclude.Include.NON_NULL)
+/**
+ * 任务表对象
+ * @author jiayanyan 2019/06/05
+ */
 public class Task extends AuditDomain {
     @Id
     @GeneratedValue
@@ -131,6 +135,7 @@ public class Task extends AuditDomain {
 
     public void setTaskNum(String taskNum) {
         this.taskNum = taskNum == null ? null : taskNum.trim();
+
     }
 
     public String getTaskName() {
@@ -139,6 +144,7 @@ public class Task extends AuditDomain {
 
     public void setTaskName(String taskName) {
         this.taskName = taskName == null ? null : taskName.trim();
+
     }
 
     public Date getLastSuccessDate() {
@@ -180,6 +186,34 @@ public class Task extends AuditDomain {
     public void setTenantId(Long tenantId) {
         this.tenantId = tenantId;
     }
+
+
+    @Override
+    public Long getObjectVersionNumber() {
+        return objectVersionNumber;
+    }
+
+    @Override
+    public void setObjectVersionNumber(Long objectVersionNumber) {
+        this.objectVersionNumber = objectVersionNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "taskId=" + taskId +
+                ", taskNum='" + taskNum + '\'' +
+                ", taskName='" + taskName + '\'' +
+                ", lastSuccessDate=" + lastSuccessDate +
+                ", lastFailDate=" + lastFailDate +
+                ", processTimes=" + processTimes +
+                ", projectId=" + projectId +
+                ", tenantId=" + tenantId +
+                ", objectVersionNumber=" + objectVersionNumber +
+                '}';
+    }
+}
+
 
     public Long getLastUpdateLogin() {
         return lastUpdateLogin;
@@ -325,3 +359,4 @@ public class Task extends AuditDomain {
         this.taskType = taskType == null ? null : taskType.trim();
     }
 }
+

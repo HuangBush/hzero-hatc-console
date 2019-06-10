@@ -5,7 +5,8 @@ import org.hzero.hatc.domain.entity.TaskDetail;
 import org.hzero.hatc.domain.repository.TaskDetailRepository;
 import org.hzero.hatc.infra.mapper.TaskDetailMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Component; 
+
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -26,6 +27,13 @@ public class TaskDetailRepositoryImpl implements TaskDetailRepository {
     public TaskDetailRepositoryImpl(TaskDetailMapper taskDetailMapper){
         this.taskDetailMapper = taskDetailMapper;
     }
+  
+   @Override
+    public void deleteByTaskId(Long taskId) {
+        TaskDetail taskDetail = new TaskDetail();
+        taskDetail.setTaskId(taskId);
+       taskDetailMapper.delete(taskDetail);
+      }
 
     @Transactional(rollbackFor = Exception.class)
     @Override
