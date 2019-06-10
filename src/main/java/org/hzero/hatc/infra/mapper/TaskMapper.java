@@ -8,4 +8,5 @@ import org.hzero.hatc.domain.entity.Task;
  * @author jiayanyan 2019/06/05
  */
 public interface TaskMapper  extends BaseMapper<Task>   {
+
 }
