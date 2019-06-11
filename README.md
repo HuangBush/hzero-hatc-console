@@ -5,3 +5,4 @@ hzero项目练习 --
       在app的service实现层实现级联删除，进行事务管理
 记录2：新添taskdetail增删改查
 记录3：新添task增删改查
+记录4：新添moduleDetail增删改查
